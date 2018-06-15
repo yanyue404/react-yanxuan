@@ -1,25 +1,25 @@
-const path = require('path')
+const path = require('path');
 const webpack = require('webpack');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
-let pathsToClean = [
+const pathsToClean = [
   'dist',
-]
+];
 
 module.exports = {
   entry: {
-    "app.bundle": './src/app.jsx',
+    'app.bundle': './src/index.js',
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name].[hash].js'
+    filename: '[name].[hash].js',
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './src/index.html',
+      template: './public/index.html',
       filename: 'index.html',
-  
+
       minify: {
         collapseWhitespace: true,
       },
@@ -29,7 +29,7 @@ module.exports = {
     new CleanWebpackPlugin(pathsToClean),
     // 热加载
     new webpack.NamedModulesPlugin(),
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
   ],
   module: {
     rules: [
@@ -40,19 +40,19 @@ module.exports = {
             loader: 'file-loader',
             options: {
               name: '[name].[ext]',
-              outputPath: 'static/images/'
-            }
+              outputPath: 'static/images/',
+            },
           },
-        ]
+        ],
       },
       // 下面几行才是 html-loader 的配置内容
       {
         test: /\.html$/,
-        use: [ {
+        use: [{
           loader: 'html-loader',
           options: {
-            minimize: true
-          }
+            minimize: true,
+          },
         }],
       },
       {
@@ -76,9 +76,9 @@ module.exports = {
     ],
   },
   devServer: {
-    port: 9002,
+    port: 9004,
     open: true,
-    hot: true
-  }
- 
+    hot: true,
+  },
+
 };
