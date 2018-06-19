@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { HashRouter, Route, Redirect } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import { store } from './reducer';
+import * as types from './actions';
+import { store } from './reducers';
 import Home from './containers/home';
 
 class App extends Component {
@@ -9,8 +10,8 @@ class App extends Component {
     <Provider store={store}>
       <HashRouter>
         <React.Fragment>
-        <Route exact path="/" render={() => (<Redirect to="/main/home"/>)}/>
-        <Route path='/main' component={Home}></Route>
+          <Route exact path="/" render={() => (<Redirect to="/main/home" />)} />
+          <Route path='/main' component={Home}></Route>
         </React.Fragment>
       </HashRouter>
     </Provider>;
