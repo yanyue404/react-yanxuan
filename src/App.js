@@ -1,21 +1,19 @@
 import React, { Component } from 'react';
 import { HashRouter, Route, Redirect } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import * as types from './actions';
 import { store } from './reducers';
-import Home from './containers/home';
+import Main from './containers/Main/Main';
 
-class App extends Component {
+export default class extends Component {
   render() {
-    <Provider store={store}>
-      <HashRouter>
-        <React.Fragment>
-          <Route exact path="/" render={() => (<Redirect to="/main/home" />)} />
-          <Route path='/main' component={Home}></Route>
-        </React.Fragment>
-      </HashRouter>
-    </Provider>;
+    return (
+        <Provider store= {store}>
+           <HashRouter>
+                    <React.Fragment>
+                    <Route exact path="/" component={Main}/>
+                    </React.Fragment>
+                </HashRouter>
+        </Provider>
+    );
   }
 }
-
-export default App;
