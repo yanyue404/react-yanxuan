@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const babelTransformRuntime = require('babel-plugin-transform-runtime');
 
 const pathsToClean = [
   'dist',
@@ -69,7 +70,8 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['es2015', 'react'],
+            presets: ['es2015', 'stage-0', 'react'],
+            plugins: ['transform-runtime'],
           },
         },
       },
@@ -84,7 +86,7 @@ module.exports = {
     ],
   },
   devServer: {
-    port: 9004,
+    port: 9009,
     open: true,
     hot: true,
   },

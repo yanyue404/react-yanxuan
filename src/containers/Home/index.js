@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './style.scss';
+import { XScroll, TypeList } from '../../components';
 
 const newGoods = [
   {
@@ -95,6 +96,9 @@ export default class Home extends Component {
                             </div>
                         </div>
                         <div className="types-scroll-wrapper">
+                            <XScroll className="types-wrapper">
+                                <TypeList />
+                            </XScroll>
                         </div>
                     </div>
                 </header>
