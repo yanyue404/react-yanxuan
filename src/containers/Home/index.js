@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './style.scss';
-import { XScroll, TypeList, ImageSwipper } from '../../components';
+import { XScroll, TypeList, ImageSwipper, PolicyList, BrandCard } from '../../components';
 
 const newGoods = [
   {
@@ -113,7 +113,52 @@ export default class Home extends Component {
             'https://yanxuan.nosdn.127.net/e89d144dbf0721a17ec879041a515ca3.jpg?imageView&thumbnail=750x0&quality=75',
             'https://yanxuan.nosdn.127.net/c6ddd46cce0b1a3467b1b3ee8597b683.jpg?imageView&thumbnail=750x0&quality=75',
           ]} />
+        <section className="home-policys">
+          <PolicyList policys={['网易自营品牌', '30天无忧退货', '48小时快速退款']} />
+        </section>
+        <section className="index-floor">
+          <header className="title">
+            <span className="text">
+              品牌制造商直供 <i className="iconfont icon-ICONbiaozhun_fuzhi-" />
+            </span>
+          </header>
+          <ul className="list">
+            <li className="item">
+              <BrandCard isNew
+                brand="Nine West"
+                price={199}
+                img="https://yanxuan.nosdn.127.net/dd604acce92e61616a0fa2498cf0fd35.png?imageView&thumbnail=355x0&quality=65"
+                href="https://m.you.163.com/item/manufacturer?tagId=1038001&page=1&size=100"
+              />
+            </li>
+            <li className="item">
+              <BrandCard
+                brand="Ralph Lauren"
+                price={19}
+                img="https://yanxuan.nosdn.127.net/f898f62e0a3d68faf9506792f344a503.png?imageView&thumbnail=355x0&quality=65"
+                href="https://m.you.163.com/item/manufacturer?tagId=1001020&page=1&size=100"
+              />
+            </li>
+            <li className="item">
+              <BrandCard brand="爱慕"
+                price={35}
+                img="https://yanxuan.nosdn.127.net/eadb8d362726ccef7c40659a5f20e210.png?imageView&thumbnail=355x0&quality=65"
+                href="https://m.you.163.com/item/manufacturer?tagId=1001016&page=1&size=100"
+              />
+            </li>
+            <li className="item">
+              <BrandCard
+                isNew
+                brand=" CK"
+                price={25}
+                img="https://yanxuan.nosdn.127.net/bcca932aeb9d818dcf6d3a4804f7311b.png?imageView&thumbnail=355x0&quality=65"
+                href="https://m.you.163.com/item/manufacturer?tagId=1026000&page=1&size=100"
+              />
+            </li>
+          </ul>
+        </section>
       </div>
+
     );
   }
 }

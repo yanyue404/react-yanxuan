@@ -9,6 +9,11 @@ export default class extends Component {
       index: 0,
     };
   }
+
+  handleClickDot(index) {
+    this.swipe.swipe.slide(index);
+  }
+
   render() {
     const { list } = this.props;
 
@@ -22,20 +27,25 @@ export default class extends Component {
       auto: 2000,
     };
 
+    const dotClass = (index) => {
+      const str = this.state.index === index ? 'dot active' : 'dot';
+      return str;
+    };
+
     return (
       <div className="swipper-wrapper">
-      <ReactSwipe className="carousel" swipeOptions={swipeOpt}>
-        {list.map((image, index) => (
+        <ReactSwipe className="carousel" ref={ref => this.swipe = ref} swipeOptions={swipeOpt}>
+          {list.map((image, index) => (
             <div key={index} className="swipper-item">
               <img className="swipper-image" src={image} />
             </div>
           ))}
-      </ReactSwipe>
-      <div className="swiper-dots">
-          {list.map((val, index) => {
-            <span key = {index} className={dotClass(index)}></span>;
-          })}
-      </div>
+        </ReactSwipe>
+        <div className="swiper-dots">
+          {list.map((val, index) => (
+            <span onClick={() => this.handleClickDot(index)} key={index} className={dotClass(index)} />
+          ))}
+        </div>
       </div>
     );
   }
