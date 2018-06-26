@@ -6,6 +6,11 @@ const defaultState = {
   shopCartGoods: [],
 };
 
+// 设置展示详情的商品
+export const setCurrentGoods = good => ({
+  type: 'SET_CURRENT_GOOD',
+  good,
+});
 
 const cartReducer = (shopCartGoods, action) => {
   const copyGoods = shopCartGoods.slice();

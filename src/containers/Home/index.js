@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './style.scss';
-import { XScroll, TypeList, ImageSwipper, PolicyList, BrandCard } from '../../components';
+import { XScroll, TypeList, ImageSwipper, PolicyList, BrandCard, ColorPanel, GoodsSwiper } from '../../components';
 
 const newGoods = [
   {
@@ -156,6 +156,28 @@ export default class Home extends Component {
               />
             </li>
           </ul>
+        </section>
+        <section className="home-color-panel">
+          <ColorPanel
+            title="新品首发"
+            bgImage="https://yanxuan-static.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/icon-normal/bitmap-d4f7b37e32.png"
+            textColor="#8BA0B6"
+            btnColor="#d8e5f1"
+          />
+        </section>
+        <section className="home-good-swiper">
+          <GoodsSwiper goods={newGoods} />
+        </section>
+        <section className="home-color-panel">
+          <ColorPanel
+            title="人气推荐·好物精选"
+            bgImage="https://yanxuan-static.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/icon-normal/bitmap2-d626e0b52a.png"
+            textColor="#B4A078"
+            btnColor="#F4E9CB"
+          />
+        </section>
+        <section className="home-good-swiper">
+          <GoodsSwiper goods={recommendGoods} />
         </section>
       </div>
 

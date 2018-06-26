@@ -1,9 +1,11 @@
-import React, { Component } from 'react'
-import './style.scss'
+import React, { Component } from 'react';
+import './style.scss';
+
 export default class extends Component {
   render() {
-
-    const { isNew, brand, price, img, href } = this.props;
+    const {
+      isNew, brand, price, img, href,
+    } = this.props;
     return (
       <a className="brand-item">
         <img src={img} />
@@ -17,6 +19,6 @@ export default class extends Component {
           {isNew ? <i className="icon-new" /> : ''}
         </div>
       </a>
-    )
+    );
   }
 }

@@ -13,7 +13,6 @@ export default class extends Component {
           <React.Fragment>
             <Route exact path="/" render={() => (<Redirect to="/main/home"/>)}/>
             <Route path='/main' component={Main}></Route>
-            <Route exact path='/shopcart' component={ShopCart}></Route>
           </React.Fragment>
         </HashRouter>
       </Provider>
