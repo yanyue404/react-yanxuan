@@ -4,7 +4,8 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import XScroll from '../XScroll';
-import { store, setCurrentGoods } from '../../reducers';
+import { setCurrentGoods } from '../../actions';
+import { store } from '../../reducers';
 import './style.scss';
 
 class GoodsSwiper extends Component {

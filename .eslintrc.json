@@ -14,7 +14,7 @@
   },
   "rules": {
     "semi": 2,
-    "no-console": 0,
+    "no-console": 1,
     "linebreak-style": 0,
     "class-methods-use-this": "off",
     "no-unused-vars": 0,
@@ -23,6 +23,7 @@
     "no-case-declarations": 0,
     "no-return-assign": 0,
     "max-len": 0,
-    "array-callback-return": 0
+    "array-callback-return": 0,
+    "prefer-destructuring": 1
   }
 }

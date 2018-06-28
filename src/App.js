@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import { store } from './reducers';
 import Main from './containers/Main';
 import ShopCart from './containers/ShopCart';
+import GoodDetail from './containers/GoodDetail';
 
 export default class extends Component {
   render() {
@@ -13,6 +14,7 @@ export default class extends Component {
           <React.Fragment>
             <Route exact path="/" render={() => (<Redirect to="/main/home"/>)}/>
             <Route path='/main' component={Main}></Route>
+            <Route path='/detail' component={GoodDetail}></Route>
           </React.Fragment>
         </HashRouter>
       </Provider>
