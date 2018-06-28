@@ -9,6 +9,10 @@ export default class TypeList extends Component {
     };
   }
 
+  static defaultProps = {
+    list: ['推荐', '居家', '配件', '服装', '电器', '洗护', '饮食', '婴童', '文艺', '特色区', '火星区'],
+  }
+
   handleItemClick(index) {
     this.setState({
       activeIndex: index,
@@ -27,6 +31,3 @@ export default class TypeList extends Component {
   }
 }
 
-TypeList.defaultProps = {
-  list: ['推荐', '居家', '配件', '服装', '电器', '洗护', '饮食', '婴童', '文艺', '特色区', '火星区'],
-};
