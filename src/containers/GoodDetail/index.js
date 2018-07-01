@@ -1,14 +1,24 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 import { withRouter } from 'react-router-dom';
-import { PolicyList } from '../../components';
+import { PolicyList, CartIcon } from '../../components';
 import { store } from '../../reducers';
+import { isEmpty, ballToElement } from '../../static/js/until';
+import { addToCart } from '../../actions';
 import './style.scss';
 
 class GoodDetail extends Component {
   componentWillMount() {
     const currentGood = store.getState().currentGood;
+    if (isEmpty(currentGood)) {
+      this.toHome();
+    }
     this.currentGood = currentGood;
     console.log(this.currentGood);
+  }
+
+  componentDidMount() {
+    document.querySelector('body').scrollTop = 0;
   }
 
   toHome = () => {
@@ -21,6 +31,25 @@ class GoodDetail extends Component {
 
 handleBackClick = () => {
   this.props.history.goBack();
+}
+
+handleAddCart = (e) => {
+  ballToElement(e, ReactDOM.findDOMNode(this.shopCart))
+    .then(() => {
+      this.addCart();
+    });
+}
+
+handleBuyNow = (e) => {
+  ballToElement(e, ReactDOM.findDOMNode(this.shopCart))
+    .then(() => {
+      this.addCart();
+      this.props.history.push('/main/shopcart');
+    });
+}
+
+addCart = () => {
+  store.dispatch(addToCart(this.currentGood));
 }
 
 render() {
@@ -36,6 +65,7 @@ render() {
               <p className="title">
                   网易严选
               </p>
+              <CartIcon onClick={this.handleCartClick} getCartRef={ref => this.shopCart = ref}/>
           </header>
       </div>
       <div className="detail-content">
