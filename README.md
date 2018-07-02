@@ -1,9 +1,20 @@
 # react-yanxuan
 > 网易严选demo
 
-未完成
 
-## Userful links
+## Build Setup
 
-- https://doc.react-china.org/
-- https://sl1673495.github.io/react-yanxuan/#/main/home
+``` bash
+# 下载依赖
+yarn install
+
+# 服务开启默认运行在 http://localhost:9009/
+yarn start/dev
+
+# eslint修正语法错误
+yarn lint-fix
+
+# 生产发布
+yarn build
+
+```
