@@ -1,0 +1,27 @@
+.cart-control {
+  display: flex;
+  width: 1.2rem;
+  text-align: center;
+  align-items: stretch;
+  .add {
+    flex: 0 0 0.4rem;
+    font-size: 0.25rem;
+    border: 1px solid #b4b4b4;
+  }
+  .input {
+    flex: 1;
+    line-height: .25rem;
+    border: 1px solid #b4b4b4;
+    border-left: none;
+    border-right: none;
+  }
+.decrease {
+  flex: 0 0 .4rem;
+  font-size: .25rem;
+  border: 1px solid #b4b4b4;
+  &.disabled {
+    color: #d6d7d8;
+    border-color: #d6d7d8;
+  }
+}
+}

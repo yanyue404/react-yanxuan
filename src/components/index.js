@@ -6,3 +6,6 @@ export { default as BrandCard } from './BrandCard';
 export { default as ColorPanel } from './ColorPanel';
 export { default as GoodsSwiper } from './GoodsSwiper';
 export { default as CartIcon } from './CartIcon';
+export { default as Badge } from './Badge';
+export { default as CartControl } from './CartControl';
+export { default as Loading } from './Loading';
