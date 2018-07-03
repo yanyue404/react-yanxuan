@@ -1,6 +1,5 @@
-import { createStore, combineReducers } from 'redux';
 
-const defaultState = {
+export const defaultState = {
   currentGood: {},
   shopCartGoods: [],
 };
@@ -36,12 +35,11 @@ const goodReducer = (currentGood, action) => {
   }
 };
 
-const rootReducer = (state = {}, action) => ({
+export const rootReducer = (state = {}, action) => ({
   currentGood: goodReducer(state.currentGood, action),
   shopCartGoods: cartReducer(state.shopCartGoods, action),
 });
 
-export const store = createStore(rootReducer, defaultState);
 
-// 商品数量
-export const goodsNum = () => store.getState().shopCartGoods.reduce((total, good) => total + good.number, 0);
+// // 商品数量
+// export const goodsNum = () => store.getState().shopCartGoods.reduce((total, good) => total + good.number, 0);

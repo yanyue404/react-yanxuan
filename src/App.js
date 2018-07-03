@@ -1,13 +1,20 @@
 import React, { Component } from 'react';
+import { createStore, applyMiddleware } from 'redux';
+import { devToolsEnhancer } from 'redux-devtools-extension';
 import { HashRouter, Route, Redirect } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import { store } from './reducers';
+import { rootReducer, defaultState } from './reducers';
 import Main from './containers/Main';
 import ShopCart from './containers/ShopCart';
 import GoodDetail from './containers/GoodDetail';
 
 export default class extends Component {
   render() {
+    const store = createStore(
+      rootReducer,
+      defaultState,
+      devToolsEnhancer(),
+    );
     return (
       <Provider store={store}>
         <HashRouter>
