@@ -1,5 +1,0 @@
-export { default as Main } from './Main/Main'
-export { default as Home } from './Home/Home'
-export { default as ShopCart } from './ShopCart/ShopCart'
-export { default as GoodDetail } from './GoodDetail/GoodDetail'
-export { default as Author } from './Author/Author'
