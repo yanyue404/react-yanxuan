@@ -18,4 +18,7 @@ yarn lint-fix
 # 生产发布
 yarn build
 
+# github 发布
+git subtree push --prefix=dist origin gh-pages
+
 ```
