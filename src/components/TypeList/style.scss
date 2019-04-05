@@ -2,11 +2,11 @@
   display: -webkit-box;
   .item {
     position: relative;
-    line-height: .3rem;
-    font-size: .15rem;
-    padding: 0 .15rem;
+    line-height: 0.3rem;
+    font-size: 0.15rem;
+    padding: 0 0.15rem;
     white-space: nowrap;
-    transition: all .5s;
+    transition: all 0.5s;
     &.active {
       color: #b4282d;
       &::after {

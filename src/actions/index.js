@@ -15,8 +15,3 @@ export const decreaseFromCart = good => ({
   type: 'DECREASE_FROM_CART',
   good,
 });
-
-export const goodsNum = good => ({
-  type: 'GET_GOODS_NUMS',
-  good,
-});

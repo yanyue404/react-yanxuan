@@ -6,9 +6,9 @@ export default class extends Component {
     const { loading } = this.props;
     return (
       loading ? (
-                        <div className="loading-wrapper">
-                            <i className="iconfont icon-loading" />
-                        </div>
+        <div className="loading-wrapper">
+          <i className="iconfont icon-loading" />
+        </div>
       ) : null
     );
   }

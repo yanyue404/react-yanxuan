@@ -5,7 +5,7 @@
   align-items: center;
   bottom: 0;
   width: 100%;
-  height: .5rem;
+  height: 0.5rem;
   background: #fafafa;
   border-top: 1px solid #d9d9d9;
   z-index: 1;
@@ -19,10 +19,10 @@
     color: #666;
     text-decoration: none;
     i {
-     font-size: .22rem;
+      font-size: 0.22rem;
     }
     .text {
-      margin-top: .05rem;
+      margin-top: 0.05rem;
       display: block;
     }
     &.active {
@@ -31,5 +31,5 @@
   }
 }
 .router-view {
-  padding-bottom: .5rem;
+  padding-bottom: 0.5rem;
 }

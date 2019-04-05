@@ -2,10 +2,9 @@
   "name": "yue-react-open",
   "version": "1.0.0",
   "scripts": {
-    "start": "webpack-dev-server",
-    "dev": "webpack-dev-server",
+    "start": "webpack-dev-server  --progress --colors ",
+    "dev": "webpack-dev-server  --progress --colors ",
     "build": "webpack -p",
-	"analyz": "webpack --profile --json > stats.json webpack-bundle-analyzer ./stats.json",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint **/*.js",
     "lint-html": "eslint **/*.js -f html -o ./reports/lint-results.html",
@@ -20,7 +19,6 @@
     "react-router-dom": "^4.2.2",
     "react-swipe": "^5.1.1",
     "redux": "^4.0.0",
-    "redux-devtools-extension": "^2.13.5",
     "swipe-js-iso": "^2.0.4"
   },
   "devDependencies": {
@@ -52,7 +50,6 @@
     "uglifyjs-webpack-plugin": "^1.1.6",
     "url-loader": "^0.6.2",
     "webpack": "^3.10.0",
-    "webpack-bundle-analyzer": "^2.13.1",
     "webpack-dev-server": "^2.11.1"
   },
   "license": "MIT"

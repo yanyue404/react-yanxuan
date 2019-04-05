@@ -17,11 +17,11 @@ export default class extends Component {
     const decreaseCls = value > 1 ? 'decrease' : 'decrease disabled';
     return (
       <div className="cart-control">
-      <div className={decreaseCls} onTouchStart={this.handleClickDecrease}>-</div>
-      <div className="input">
+        <div className={decreaseCls} onTouchStart={this.handleClickDecrease}>-</div>
+        <div className="input">
           {value}
-      </div>
-      <div className="add" onTouchStart={this.handleClickAdd}>+</div>
+        </div>
+        <div className="add" onTouchStart={this.handleClickAdd}>+</div>
       </div>
     );
   }

@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route, NavLink } from 'react-router-dom';
-import Home from '../Home';
-import ShopCart from '../ShopCart';
-import Author from '../Author';
+import { Route, NavLink } from 'react-router-dom';
+import { Home, ShopCart, Author } from "../../containers";
 import './style.scss';
 
 export default class extends Component {

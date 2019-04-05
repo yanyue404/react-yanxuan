@@ -3,7 +3,6 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const babelTransformRuntime = require('babel-plugin-transform-runtime');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 const pathsToClean = [
   'dist',
@@ -32,21 +31,6 @@ module.exports = {
     // 热加载
     new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin(),
-	// 打包分析
-	new BundleAnalyzerPlugin(
-           {
-              analyzerMode: 'server',
-              analyzerHost: '127.0.0.1',
-              analyzerPort: 8889,
-              reportFilename: 'report.html',
-              defaultSizes: 'parsed',
-              openAnalyzer: true,
-              generateStatsFile: false,
-              statsFilename: 'stats.json',
-              statsOptions: null,
-              logLevel: 'info'
-                }
-       ),
   ],
   module: {
     rules: [
@@ -94,11 +78,11 @@ module.exports = {
       {
         test: /\.css$/, loader: 'style-loader!css-loader',
       },
-      {
-        test: /\.js$/,
-        exclude: /(node_modules)/,
-        loader: 'eslint-loader',
-      },
+      // {
+      //   test: /\.js$/,
+      //   exclude: /(node_modules)/,
+      //   loader: 'eslint-loader',
+      // },
     ],
   },
   devServer: {

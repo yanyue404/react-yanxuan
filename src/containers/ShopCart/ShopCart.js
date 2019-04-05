@@ -4,9 +4,8 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { PolicyList, Badge, CartControl } from '../../components';
 import { addToCart, decreaseFromCart } from '../../actions';
-import { ballToElement } from '../../static/js/until';
+import { ballToElement } from '../../utils';
 import './style.scss';
-import { goodsNum } from '../../reducers';
 
 class ShopCart extends Component {
   constructor(props) {

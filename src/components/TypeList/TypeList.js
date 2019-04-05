@@ -15,7 +15,7 @@ export default class TypeList extends Component {
 
   handleItemClick(index) {
     this.setState({
-      activeIndex: index,
+      activeIndex: index
     });
   }
 

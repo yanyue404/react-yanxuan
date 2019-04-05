@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { withRouter } from 'react-router-dom';
 import { store, goodsNum } from '../../reducers';
 import './style.scss';
 
@@ -33,11 +32,11 @@ class CartIcon extends Component {
   render() {
     const { number } = this.state;
     return (
-          <div className="cart-icon" onClick={this.handleClickCart} ref="shopCart">
-              <i className="iconfont icon-gouwuche cart">
-                  {number > 0 ? <span className="goods-num">{this.state.number}</span> : ''}
-              </i>
-          </div>
+      <div className="cart-icon" onClick={this.handleClickCart} ref="shopCart">
+        <i className="iconfont icon-gouwuche cart">
+          {number > 0 ? <span className="goods-num">{this.state.number}</span> : ''}
+        </i>
+      </div>
     );
   }
 }
