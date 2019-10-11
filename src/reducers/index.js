@@ -1,11 +1,11 @@
-import { createStore, combineReducers } from 'redux';
+import { createStore, combineReducers, compose } from 'redux';
 
 const defaultState = {
   currentGood: {},
-  shopCartGoods: [],
+  shopCartGoods: []
 };
 
-const cartReducer = function (shopCartGoods, action) {
+const cartReducer = function(shopCartGoods, action) {
   const copyGoods = shopCartGoods.slice();
   const actionGood = action.good;
   const exsitGood = copyGoods.find(good => good.name === actionGood.name);
@@ -38,10 +38,17 @@ const goodReducer = (currentGood, action) => {
 
 const rootReducer = (state = {}, action) => ({
   currentGood: goodReducer(state.currentGood, action),
-  shopCartGoods: cartReducer(state.shopCartGoods, action),
+  shopCartGoods: cartReducer(state.shopCartGoods, action)
 });
 
-export const store = createStore(rootReducer, defaultState);
+export const store = createStore(
+  rootReducer,
+  defaultState,
+  compose(window.devToolsExtension ? window.devToolsExtension() : f => f)
+);
 
 // 商品数量
-export const goodsNum = () => store.getState().shopCartGoods.reduce((total, good) => total + good.number, 0);
+export const goodsNum = () =>
+  store
+    .getState()
+    .shopCartGoods.reduce((total, good) => total + good.number, 0);
